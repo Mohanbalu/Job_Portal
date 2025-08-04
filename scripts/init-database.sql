@@ -1,0 +1,34 @@
+-- Initialize MongoDB collections and indexes
+-- This is a reference SQL file for MongoDB operations
+
+-- Users collection structure
+-- {
+--   _id: ObjectId,
+--   name: String (required),
+--   email: String (required, unique, indexed),
+--   password: String (required, hashed),
+--   bio: String (default: ""),
+--   linkedinUrl: String (default: ""),
+--   skills: Array of Strings,
+--   walletAddress: String (default: ""),
+--   createdAt: Date,
+--   updatedAt: Date
+-- }
+
+-- Indexes to create in MongoDB:
+-- db.users.createIndex({ "email": 1 }, { unique: true })
+-- db.users.createIndex({ "createdAt": 1 })
+-- db.users.createIndex({ "skills": 1 })
+
+-- Sample user data for testing:
+-- {
+--   "name": "John Doe",
+--   "email": "john@example.com",
+--   "password": "$2a$12$hashedpassword",
+--   "bio": "Full-stack developer with 5 years of experience",
+--   "linkedinUrl": "https://linkedin.com/in/johndoe",
+--   "skills": ["JavaScript", "React", "Node.js", "MongoDB"],
+--   "walletAddress": "0x1234567890abcdef",
+--   "createdAt": "2024-01-01T00:00:00.000Z",
+--   "updatedAt": "2024-01-01T00:00:00.000Z"
+-- }
